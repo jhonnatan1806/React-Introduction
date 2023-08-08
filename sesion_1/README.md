@@ -270,11 +270,6 @@ Este comando abrirá Visual Studio Code en la carpeta actual. Luego, crearemos u
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>React "Hola Mundo"</title>
-        <style>
-            .text-red-500 {
-                color: rgb(239 68 68);
-            }
-        </style>
     </head>
     <body>
         <div id="root"></div>
@@ -302,7 +297,7 @@ Ahora agregaremos un script que renderice el mensaje de "Hola mundo" en el eleme
 ```html
 <script type="text/babel">
     function App() {
-        return <h1 class="text-red-500">Hola Mundo desde React</h1>;
+        return <h1>Hola Mundo desde React</h1>;
     }
 
     ReactDOM.render(<App />, document.getElementById("root"));
