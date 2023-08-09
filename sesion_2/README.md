@@ -451,7 +451,7 @@ function App() {
                         </div>
                         <a
                             href="#"
-                            className="px-4 py-1 rounded-md select-none bg-red text-white">
+                            className="px-4 py-1 rounded select-none bg-red text-white">
                             <p>Sign In</p>
                         </a>
                     </div>
@@ -472,7 +472,7 @@ function App() {
                             placeholder="Email address"
                         />
                         <button
-                            className="flex flex-row items-center gap-4 px-8 py-3 rounded-md select-none bg-red text-white">
+                            className="flex flex-row items-center gap-4 px-8 py-3 rounded select-none bg-red text-white">
                             <p className="font-medium text-2xl">Get Started</p>
                             <FaChevronRight />
                         </button>
