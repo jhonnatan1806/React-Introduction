@@ -368,21 +368,80 @@ Crear una aplicacion con React usando 4 elementos:
 - Un boton de like :heart:
 - Una descripción
 
-Ejemplo de archivo `main.js`:
+## Solución de la actividad de reforzamiento
+
+Nuestro `main.css` quedaria de la siguiente forma:
+
+```css
+p {
+    margin: 0;
+}
+
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.text-red-500 {
+    color: rgb(239 68 68);
+}
+
+.rounded-md {
+    border-radius: 0.375rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.max-w-300 {
+    max-width: 300px;
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.bg-slate-50 {
+    background-color: rgb(229 231 235);
+}
+```
+
+Y el archivo `main.js` quedaria de la siguiente forma:
 
 ```js
 function App() {
+
     return (
-        <div>
-            <h1> Titulo </h1>
-            <img src="http://placekitten.com/300/300" />
-            <button> &#10084; </button>
-            <p> Descripcion de la foto </p>
+        <div className="flex flex-col p-4 gap-4 max-w-300 rounded-md bg-slate-50">
+            <div className="flex gap-4">
+                <img src="http://placekitten.com/48/48" alt="profile" className="rounded-full"/>
+                <h1 className="text-base">@jhonnatanER</h1>
+            </div>
+            <img src="http://placekitten.com/300/300" alt="imagen" className="rounded-md"/>
+            <button className="w-fit-content text-red-500">&#10084;</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum nisl at ipsum tincidunt malesuada ...</p>
         </div>
     );
 }
 
-//resto del codigo
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 ## Bibliografía
