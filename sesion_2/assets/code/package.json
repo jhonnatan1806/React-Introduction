@@ -1,0 +1,20 @@
+{
+    "name": "package.json-file",
+    "version": "1.0.0",
+    "description": "creating a new package.json file",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index"
+    },
+    "author": "Jhonnatan Espinoza Rojas",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "~2.4.3",
+        "dotenv": "^6.1.0",
+        "express": "4.16.4"
+    },
+    "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "~6.2.0"
+    }
+}
