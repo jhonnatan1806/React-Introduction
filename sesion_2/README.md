@@ -196,28 +196,6 @@ export default App
 
 Con esto ya tenemos creado nuestro proyecto con Vite.
 
-### Instalación de Icons-React
-
-Ahora que tenemos creado nuestro proyecto, vamos a instalar algunas dependencias que nos ayudarán a desarrollar nuestro proyecto.
-
-La primera dependecia que vamos a instalar es `react-icons` para utilizar iconos en nuestro proyecto, para ello ejecutamos el siguiente comando:
-
-```bash
-npm install react-icons --save
-```
-
-Ejemplo de uso de react-icons:
-
-```jsx
-import { FaReact } from 'react-icons/fa';
-
-export default function App() {
-  return (
-    <FaReact />
-  )
-}
-```
-
 ### Instalación y configuración de ESLint
 
 Ahora vamos a instalar ESLint para utilizarlo como linter en nuestro proyecto, para ello ejecutamos el siguiente comando:
