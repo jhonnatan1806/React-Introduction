@@ -69,7 +69,6 @@ Existen otras propiedades que se pueden definir en el archivo `package.json`, pe
 
 > **Nota:** Mas información sobre el archivo `package.json` en la documentación oficial de [npm](https://docs.npmjs.com/files/package.json).
 
-
 ### ¿Cuál es el propósito del archivo package.json en Node.js?
 
 Aquí están algunos de los propósitos principales del archivo package.json en Node.js:
@@ -95,7 +94,6 @@ Si no se utiliza ni el símbolo ~ (tilde) ni el símbolo ^ (caret) junto a la ve
 
 > **Nota:** Usar una versión exacta puede ser útil cuando deseas asegurarte de que tu proyecto siempre utilice una versión específica y probada de una dependencia. Sin embargo, también es importante recordar que esto podría llevar a no aprovechar las mejoras y correcciones de errores que se introduzcan en versiones posteriores.
 
-
 ## ¿Qué es un módulo?
 
 ![Módulo](./assets/img/module.png)
@@ -105,7 +103,6 @@ Un módulo es un archivo o directorio que contiene código JavaScript y se puede
 ### ¿Que es node_modules?
 
 `node_modules` es un directorio que contiene todos los paquetes de Node.js instalados en un proyecto. Cada paquete se almacena en su propio directorio dentro de `node_modules`, junto con su archivo `package.json` y cualquier otro archivo relacionado con el paquete.
-
 
 ## Comandos básicos de npm
 
@@ -175,7 +172,7 @@ Para crear un proyecto ReactJS con npm, se debe ejecutar el siguiente comando:
 npm create vite@latest
 ```
 
-Primero eliminamos el contenido de los archivos `App.css`, `main.css` y `App.jsx` ubicados en la carpeta `src`. 
+Primero eliminamos el contenido de los archivos `App.css`, `main.css` y `App.jsx` ubicados en la carpeta `src`.
 
 Ahora en el archivo App.jsx agregamos el siguiente código:
 
