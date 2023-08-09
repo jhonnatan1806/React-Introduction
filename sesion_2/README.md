@@ -87,7 +87,7 @@ Aquí están algunos de los propósitos principales del archivo package.json en 
 
 Las versiones de npm se escriben en el formato 0.0.0, donde el primer número (de izquierda a derecha) representa la versión **principal**, el segundo la **versión menor** y el tercero la última **versión de parche** de esa versión particular.
 
-Las actualizaciones de parche se refieren a correcciones de errores. En el archivo package.json, esta representación se lleva a cabo mediante el símbolo ~. El tilde (~) bloquea todas las versiones principales y menores anteriores. De esta manera, solo permite instalar la última versión parcheada cuando estás instalando esta dependencia en particular.
+Las actualizaciones de parche se refieren a correcciones de errores. En el archivo package.json, esta representación se lleva a cabo mediante el símbolo \~. El tilde (\~) bloquea todas las versiones principales y menores anteriores. De esta manera, solo permite instalar la última versión parcheada cuando estás instalando esta dependencia en particular.
 
 La notación del caret (^) se utiliza para actualizar automáticamente las actualizaciones menores y las actualizaciones de parche. Por ejemplo, ^1.2.0 se actualizará a 1.3.1 (si se publica la próxima versión menor de parche de esa manera), lo que nos proporcionará una solución 1.X.X.
 
