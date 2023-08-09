@@ -403,7 +403,7 @@ En nuesto archivo `App.css` agregamos los siguientes estilos:
 }
 ```
 
-Ahora procederemos a definir los colores que usaremos en el archivo `tailwind.config.js`:
+Procedemos a definir los colores que usaremos en el archivo `tailwind.config.js`:
 
 ```js
 /** @type {import('tailwindcss').Config} */
