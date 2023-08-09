@@ -359,15 +359,17 @@ public
 │   └── NetflixSans-Regular.woff2
 ├── icons
 │   └── netflix.svg
-├── imgs
-│   └── background.jpg
+└── imgs
+    └── background.jpg
 ```
 
-Podemos analizar la estructura de la vista en el siguiente diagrama:
+## Solución de la actividad de reforzamiento
+
+Primero podemos analizar la estructura de la vista en el siguiente diagrama:
 
 ![Estructura](./assets/img/estructure-html.png)
 
-Primero procedemos ah agregar las fonts a nuestro archivo `index.css`:
+Luego procedemos ah agregar las fuentes a nuestro archivo `index.css`:
 
 ```css
 @layer base {
@@ -405,7 +407,7 @@ Primero procedemos ah agregar las fonts a nuestro archivo `index.css`:
 }
 ```
 
-En nuesto archivo `App.css` agregamos el siguiente código:
+En nuesto archivo `App.css` agregamos los siguientes estilos:
 
 ```css
 .background {
@@ -423,6 +425,25 @@ En nuesto archivo `App.css` agregamos el siguiente código:
 }
 ```
 
+Ahora procederemos a definir los colores que usaremos en el archivo `tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+    theme: {
+        extend: {
+            colors:{
+                red: '#e50914',
+                white: '#ffffff',
+                black: '#151515'
+            }
+        },
+    },
+    plugins: [],
+}
+```
+
 Finalmente nuestro archivo `App.jsx` deberia verse de la siguiente forma:
 
 ```jsx
@@ -433,19 +454,22 @@ import './App.css'
 
 function App() {
     return (
-        <main className="h-screen w-screen">
-            <div className="bg-center absolute inset-0 background"></div>
-            <div className="absolute inset-0 overlay"></div>
-            <div className="relative flex flex-col w-full h-full">
-                <header className="flex flex-row w-full justify-between select-none p-6 max-w-screen-xl mx-auto">
+        <main className="relative flex flex-col h-screen w-screen">
+            <div className="absolute z-0 inset-0 bg-center background"></div>
+            <div className="absolute inset-0 z-0 overlay"></div>
+            <header className="relative z-10 flex flex-row w-full justify-between select-none p-6 max-w-screen-xl mx-auto">
                     <a href="#">
                         <img src="/icons/netflix.svg" width={148} />
                     </a>
                     <div className="flex flex-row items-center gap-4">
-                        <div className="flex flex-row items-center cursor-pointer w-fit px-2 py-1 gap-4 rounded border border-white border-opacity-25 bg-black bg-opacity-75 ">
-                            <VscGlobe size={20} fill="white" />
-                            <p className="text-white">English</p>
-                            <FaCaretDown size={14} fill="white" />
+                        <div className="relative flex flex-row items-center gap-4">
+                            <VscGlobe size={20} fill="white" className='absolute z-10 left-2'/>
+                            <FaCaretDown size={14} fill="white" className='absolute z-10 right-2' />
+                            <select className='relative w-36 px-9 py-1 appearance-none rounded border text-white border-white border-opacity-25 bg-black bg-opacity-75'>
+                                <option>English</option>
+                                <option>Español</option>
+                            </select>
+                            
                         </div>
                         <a
                             href="#"
@@ -454,7 +478,7 @@ function App() {
                         </a>
                     </div>
                 </header>
-                <section className="flex flex-col justify-center items-center gap-4 my-auto text-white">
+                <section className="relative z-10 flex flex-col justify-center items-center gap-6 my-auto text-white">
                     <h1 className="text-5xl font-bold">
                         Unlimited movies, TV shows, and more
                     </h1>
@@ -466,17 +490,16 @@ function App() {
                     <form className="flex flex-row gap-2">
                         <input
                             type="text"
-                            className="flex flex-row min-w-[375px] w-fit p-4 rounded border border-white border-opacity-25 bg-black bg-opacity-75 text-white"
+                            className="flex flex-row min-w-[375px] w-fit px-4 py-3 rounded border border-white border-opacity-25 bg-black bg-opacity-75 text-white"
                             placeholder="Email address"
                         />
                         <button
-                            className="flex flex-row items-center gap-4 px-8 py-4 rounded-md select-none bg-red text-white">
+                            className="flex flex-row items-center gap-4 px-8 py-3 rounded-md select-none bg-red text-white">
                             <p className="font-medium text-2xl">Get Started</p>
                             <FaChevronRight />
                         </button>
                     </form>
                 </section>
-            </div>
         </main>
     )
 }
@@ -484,6 +507,7 @@ function App() {
 export default App
 ```
 
+Con esto podemos concluir la actividad de reforzamiento.
 
 ## Bibliografía
 
