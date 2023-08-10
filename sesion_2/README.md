@@ -213,7 +213,7 @@ Ahora vamos a agregar nuestro primer script en el archivo `package.json`:
 ```json
 {
   "scripts": {
-    "lint": "eslint \"**/*.js\" --ignore-path .gitignore"
+    "lint": "eslint ."
   }
 }
 ```
