@@ -164,9 +164,11 @@ Para crear un proyecto ReactJS con npm, se debe ejecutar el siguiente comando:
 npm create vite@latest
 ```
 
-Primero eliminamos el contenido de los archivos `App.css`, `main.css` y `App.jsx` ubicados en la carpeta `src`.
+Con esto ya tenemos creado nuestro proyecto con Vite.
 
-Ahora en el archivo App.jsx agregamos el siguiente código:
+Ahora dejaremos nuestro proyecto en blanco para eso eliminamos el contenido de los archivos `App.css`, `main.css` ubicados en la carpeta `src`.
+
+Ahora en el archivo App.jsx modificamos el codigo y deberia quedar de la siguiente manera:
 
 ```jsx
 import './App.css'
@@ -182,8 +184,6 @@ function App() {
 
 export default App
 ```
-
-Con esto ya tenemos creado nuestro proyecto con Vite.
 
 ### Instalación y configuración de ESLint
 
