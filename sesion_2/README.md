@@ -12,6 +12,8 @@
 
 Un paquete es una colección de archivos y directorios que contienen código JavaScript, junto con un archivo `package.json` que describe los detalles del paquete, como su nombre, versión, dependencias y otros metadatos.
 
+Podemos encontrar paquetes en el registro de npm, que es un repositorio público de paquetes de Node.js. El registro de npm es el lugar donde los desarrolladores de todo el mundo publican y comparten sus paquetes de Node.js. Ademas podemos buscar paquetes en la pagina [npmjs.com](https://www.npmjs.com/).
+
 ## ¿Que es un package.json?
 
 ![package.json](./assets/img/package-json.png)
@@ -93,16 +95,6 @@ La notación del caret (^) se utiliza para actualizar automáticamente las actua
 Si no se utiliza ni el símbolo ~ (tilde) ni el símbolo ^ (caret) junto a la versión de una dependencia, esto indica que se está fijando específicamente a la versión exacta que se ha especificado.
 
 > **Nota:** Usar una versión exacta puede ser útil cuando deseas asegurarte de que tu proyecto siempre utilice una versión específica y probada de una dependencia. Sin embargo, también es importante recordar que esto podría llevar a no aprovechar las mejoras y correcciones de errores que se introduzcan en versiones posteriores.
-
-## ¿Qué es un módulo?
-
-![Módulo](./assets/img/module.png)
-
-Un módulo es un archivo o directorio que contiene código JavaScript y se puede reutilizar en otras partes de un proyecto. Los módulos son una parte esencial de Node.js, ya que permiten dividir el código en piezas más pequeñas y fáciles de mantener.
-
-### ¿Que es node_modules?
-
-`node_modules` es un directorio que contiene todos los paquetes de Node.js instalados en un proyecto. Cada paquete se almacena en su propio directorio dentro de `node_modules`, junto con su archivo `package.json` y cualquier otro archivo relacionado con el paquete.
 
 ## Comandos básicos de npm
 
