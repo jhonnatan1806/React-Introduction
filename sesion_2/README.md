@@ -238,13 +238,23 @@ Ahora crearemos un archivo `.prettierrc.json` en la raíz de nuestro proyecto co
 
 ```json
 {
-    "semi": false,
-    "singleQuote": true,
     "tabWidth": 4,
     "useTabs": false,
-    "trailingComma": "es5"
+    "semi": false,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "jsxBracketSameLine": true
 }
 ```
+
+- `tabWidth`: Indica el número de espacios que se deben usar para sangrar el código.
+- `useTabs`: Indica si se deben usar tabulaciones en lugar de espacios para sangrar el código.
+- `semi`: Indica si se debe agregar un punto y coma al final de cada sentencia.
+- `trailingComma`: Indica si se debe agregar una coma adicional al final de las listas de objetos y matrices.
+- `singleQuote`: Indica si se deben usar comillas simples en lugar de comillas dobles.
+- `jsxSingleQuote`: Indica si se deben usar comillas simples en JSX.
+- `jsxBracketSameLine`: Indica si los corchetes de apertura y cierre de JSX deben estar en la misma línea.
 
 Luego agregamos la siguiente configuración en el archivo `.eslintrc.json`:
 
@@ -256,6 +266,8 @@ Luego agregamos la siguiente configuración en el archivo `.eslintrc.json`:
     ],
 }
 ```
+
+Para poder usarlo en algun nuestros archivos usamos el atajo alt+shift+f en visual studio code.
 
 ### Instalación y configuración de TailwindCSS
 
