@@ -318,7 +318,7 @@ La composición de componentes es una técnica que consiste en crear componentes
 ```jsx
 import React from 'react';
 
-function Title ({ className }) {
+function Title ({ children }) {
     return <h1 className="text-5xl">{children}</h1>
 }
 
