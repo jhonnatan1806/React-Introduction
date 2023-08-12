@@ -2,7 +2,7 @@
     "tabWidth": 4,
     "useTabs": true,
     "semi": true,
-    "trailingComma": "es5",
+    "trailingComma": "none",
     "singleQuote": true,
     "jsxSingleQuote": false,
     "jsxBracketSameLine": true

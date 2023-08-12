@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navitem({ children, href }) {
+function Navitem({ href, children }) {
 	return (
 		<a
 			href={href}

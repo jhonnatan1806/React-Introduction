@@ -1,7 +1,7 @@
 import React from "react";
 
-function Text({children, ...props}) {
-    return <p {...props}>{children}</p>;
+function Text({children, ...props}){
+    return <p {...props}>{children}</p>
 }
 
-export default Text;
+export default Text
