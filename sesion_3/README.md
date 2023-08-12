@@ -4,7 +4,7 @@ Los componentes son la unidad básica de React, en esta sesión aprenderás a cr
 
 ![Javascript](./assets/img/javascript.png)
 
-## Parametros rest y spread
+## Parametros rest y la Sintaxis spread
 
 ![Rest Spread](./assets/img/rest-spread.png)
 
@@ -28,9 +28,9 @@ sum(1, 2, 3, 4, 5); // 15
 
 > Los parámetros rest deben ir al final de la lista de parámetros de una función.
 
-### Parametros spread
+### Sintaxis spread
 
-Los parámetros spread son una característica de JavaScript que nos permite expandir un arreglo en elementos individuales. En React, los operadores spread son una característica muy utilizada para pasar elementos individuales de un arreglo como argumentos a una función.
+La sintaxis spread es una característica de JavaScript que nos permite expandir un arreglo en elementos individuales. En React, los operadores spread son una característica muy utilizada para pasar elementos individuales de un arreglo como argumentos a una función.
 
 Por ejemplo, si tenemos una función que recibe argumentos individuales, podemos utilizar los parámetros spread para pasar elementos individuales de un arreglo como argumentos a la función de la siguiente manera:
 
