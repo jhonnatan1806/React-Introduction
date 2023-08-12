@@ -4,7 +4,7 @@ Los componentes son la unidad básica de React, en esta sesión aprenderás a cr
 
 ![Javascript](./assets/img/javascript.png)
 
-## Parametros rest y la Sintaxis spread
+## Parametros rest y sintaxis spread
 
 ![Rest Spread](./assets/img/rest-spread.png)
 
