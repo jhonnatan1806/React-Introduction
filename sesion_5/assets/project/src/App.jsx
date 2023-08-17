@@ -21,13 +21,13 @@ function App() {
 		}
 
 		const fecthPost = async () => {
-			const res = await profileService.getPosts('desgin')
+			const res = await profileService.getPosts('design')
 			setPosts(res)
 			setCounterLikes(res[0]?.metadata?.likes || 0)
 		}
 
 		const fecthPostOwnerUser = async () => {
-			const res = await profileService.getUser('desgin')
+			const res = await profileService.getUser('design')
 			setPostOwnerUser(res)
 		}
 
