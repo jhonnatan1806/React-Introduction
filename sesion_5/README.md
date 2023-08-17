@@ -278,7 +278,7 @@ function App() {
 
 ## Hook useContext
 
-![Use Context](image.png)
+![Use Context](./assets/img/use-context.png)
 
 El hook useContext nos permite acceder al contexto de React desde cualquier componente de nuestra aplicación. Con este hook podemos evitar el Prop Drilling.
 

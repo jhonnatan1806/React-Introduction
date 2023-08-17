@@ -1,8 +1,9 @@
 {
-    "useTabs": true,
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": false,
-    "jsxBracketSameLine": true
+	"tabWidth": 4,
+	"useTabs": true,
+	"semi": false,
+	"trailingComma": "none",
+	"singleQuote": true,
+	"jsxSingleQuote": false,
+	"jsxBracketSameLine": true
 }

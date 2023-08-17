@@ -1,48 +1,44 @@
-import { useState, useEffect } from 'react'
-import { FaRegComment, FaRegPaperPlane, FaRegBookmark } from 'react-icons/fa'
-import User from './User'
-import Comment from './Comment'
-
-import * as accountService from './services/fetchAccount'
+import { useState, useEffect, useRef } from 'react'
 import * as profileService from './services/fetchProfile'
-import IconToggle from './IconToogle'
+import * as accountService from './services/fetchAccount'
+import User from './components/User'
+import Comment from './components/Comment'
+import IconToggle from './components/IconToggle'
+import { FaRegComment, FaRegPaperPlane, FaRegBookmark } from 'react-icons/fa'
 
 function App() {
 	const [currentUser, setCurrentUser] = useState({})
 	const [posts, setPosts] = useState([])
-	const [postOwnerUser, setPostOwnerUser] = useState({})
-	const [isLiked, setIsLiked] = useState(false)
-	const [counterLikes, setCounterLikes] = useState(0)
+	const [postOwenerUser, setPostOwnerUser] = useState({})
 
+	//usamos useRef inmutable atraves de re-renders
+	const counterLike = useRef(null)
+
+	// component mount
 	useEffect(() => {
-		const fecthCurrentUser = async () => {
+		const fetchCurrentUser = async () => {
 			const res = await accountService.getUser('_valentina_medini')
 			setCurrentUser(res)
 		}
 
-		const fecthPost = async () => {
+		const fetchPosts = async () => {
 			const res = await profileService.getPosts('design')
 			setPosts(res)
-			setCounterLikes(res[0]?.metadata?.likes || 0)
+			counterLike.current = res[0].metadata?.likes || 0
 		}
 
-		const fecthPostOwnerUser = async () => {
+		const fetchPostOwnerUser = async () => {
 			const res = await profileService.getUser('design')
 			setPostOwnerUser(res)
 		}
 
-		fecthCurrentUser()
-		fecthPost()
-		fecthPostOwnerUser()
+		fetchCurrentUser()
+		fetchPosts()
+		fetchPostOwnerUser()
 	}, [])
 
-    const handleToggle = () => {
-		setIsLiked(!isLiked)
-		setCounterLikes((prev) => (!isLiked ? prev + 1 : prev - 1))
-	}
-
 	return (
-		<main className="flex flex-col items-center justify-center h-screen w-screen bg-black">
+		<main className="flex items-center justify-center h-screen w-screen bg-black text-white">
 			<div className="flex flex-row w-fit border border-white/25">
 				<picture>
 					<img
@@ -51,58 +47,48 @@ function App() {
 						className="max-w-[480px] max-h-[600px]"
 					/>
 				</picture>
-				<div className="w-[335px] h-[600px]">
+				<section className="w-[335px] h-[600px]">
 					<div
-						id="user"
-						className="flex flex-row items-center gap-2 w-full h-[60px] p-2 border border-white/25">
-						{postOwnerUser ? (
-							<>
-								<User user={postOwnerUser} />
-								<p className="text-sm font-medium text-white">
-									•
-								</p>
-								<p className="text-sm font-medium text-sky-500 cursor-pointer">
-									Follow
-								</p>
-							</>
-						) : null}
+						id="header"
+						className="flex flex-row items-center gap-2 p-2 w-full h-[60px] border border-white/25">
+						<User user={postOwenerUser} />
+						<p className="text-sm font-medium"> • </p>
+						<p className="text-sm font-medium text-sky-500">
+							Follow
+						</p>
 					</div>
 					<div
-						id="comments"
-						className="flex flex-col gap-2 h-[365px] overflow-y-scroll">
-						{posts[0]?.comments.map((comment) => (
-							<div key={comment.id}>
-								<Comment comment={comment} />
-							</div>
+						id="messages"
+						className="flex flex-col gap-2 w-full h-[365px] overflow-y-scroll">
+						{posts[0]?.comments.map((comment, index) => (
+							<Comment key={index} comment={comment} />
 						))}
 					</div>
-					<div className="h-[175px] p-4 border border-white/25">
-						<div id="buttons" className="flex flex-col h-[100px]">
-							<div className="flex flex-row w-full gap-4">
-								<IconToggle
-									className="w-6 h-6"
-									state={isLiked}
-									onClick={handleToggle}
-								/>
-								<FaRegComment className="w-6 h-6 text-white" />
-								<FaRegPaperPlane className="w-6 h-6 text-white" />
-								<div className="flex flex-row justify-end grow">
-									<FaRegBookmark className="w-6 h-6 text-white" />
+					<div
+						id="footer"
+						className="flex flex-col gap-4 w-full h-[175px] p-4 border border-white/25">
+						<div
+							id="icons"
+							className="flex flex-col justify-center gap-1 h-[100px]">
+							<div className="flex flex-row gap-2">
+								<IconToggle />
+								<FaRegComment className="w-6 h-6" />
+								<FaRegPaperPlane className="w-6 h-6" />
+								<div className="flex justify-end grow">
+									<FaRegBookmark className="w-6 h-6" />
 								</div>
 							</div>
-							<div className="text-white">
-								{counterLikes} likes
-							</div>
-							<div className="text-white/50 text-sm">
+							<p>{counterLike.current} likes</p>
+							<p className="text-sm text-white/50">
 								{new Date().toLocaleDateString('en-US', {
 									month: 'long',
-									day: 'numeric',
+									day: 'numeric'
 								})}
-							</div>
+							</p>
 						</div>
 						<form
-							id="comment-form"
-							className="flex flex-row items-center gap-4 h-[45px]">
+							id="form"
+							className="flex flex-row items-center gap-4">
 							<img
 								src={currentUser?.image?.url}
 								alt={currentUser?.image?.alt}
@@ -110,12 +96,12 @@ function App() {
 							/>
 							<input
 								type="text"
-								placeholder="Add a comment..."
-								className="w-full text-white bg-transparent border-none outline-none"
+								placeholder="Add a comment ..."
+								className="w-full border-none outline-none bg-transparent"
 							/>
 						</form>
 					</div>
-				</div>
+				</section>
 			</div>
 		</main>
 	)
