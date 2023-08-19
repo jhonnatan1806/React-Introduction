@@ -1,14 +1,7 @@
-import { useState } from 'react'
-
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 
-export default function IconToggle() {
-	const [isLike, setIsLike] = useState(false)
-
-	const handlerToggle = () => {
-		setIsLike((prev) => !prev)
-	}
-
+export default function IconToggle({isLike, handlerToggle}) {
+	
 	return (
 		<>
 			<button onClick={handlerToggle}>

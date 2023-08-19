@@ -10,9 +10,15 @@ function App() {
 	const [currentUser, setCurrentUser] = useState({})
 	const [posts, setPosts] = useState([])
 	const [postOwenerUser, setPostOwnerUser] = useState({})
-
-	//usamos useRef inmutable atraves de re-renders
+	const [isLike, setIsLike] = useState(false)
 	const counterLike = useRef(null)
+
+	const handlerToggle = () => {
+		setIsLike((prev) => !prev)
+		counterLike.current = !isLike
+			? counterLike.current + 1
+			: counterLike.current - 1
+	}
 
 	// component mount
 	useEffect(() => {
@@ -71,7 +77,10 @@ function App() {
 							id="icons"
 							className="flex flex-col justify-center gap-1 h-[100px]">
 							<div className="flex flex-row gap-2">
-								<IconToggle />
+								<IconToggle
+									isLike={isLike}
+									handlerToggle={handlerToggle}
+								/>
 								<FaRegComment className="w-6 h-6" />
 								<FaRegPaperPlane className="w-6 h-6" />
 								<div className="flex justify-end grow">
