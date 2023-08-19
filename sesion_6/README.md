@@ -479,7 +479,7 @@ Cuando trabajamos con aplicaciones web, es muy común que nos encontremos con c�
 
 ![Fetch](./assets/img/fetch.png)
 
-El uso de la función fetch en React es una técnica común para realizar solicitudes de red y obtener datos de servidores remotos. La función fetch está disponible en la mayoría de los navegadores y permite realizar solicitudes HTTP asincrónicas. Aquí tienes una descripción de cómo usar fetch en React.
+El uso de la función fetch en React es una técnica común para realizar solicitudes de red y obtener datos de servidores remotos. La función fetch está disponible en la mayoría de los navegadores y permite realizar solicitudes HTTP asincrónicas.
 
 Realización de una solicitud con Fetch:
 
@@ -642,51 +642,3 @@ module.exports = {
 };
 ```
 
-#### 5. Crear el servicio fetchData.js
-
-fetchCharacters.js
-
-```js
-export async function getCharacters(page) {
-    const baseUrl = 'https://rickandmortyapi.com/api';
-
-    const response = await fetch(baseUrl);
-    const data = await response.json();
-    const charactersUrl = data.characters;
-
-    const charactersResponse = await fetch(`${charactersUrl}?page=${page}`);
-    const characters = await charactersResponse.json();
-
-    return characters;
-}
-```
-
-App.js
-
-```jsx
-import { useEffect, useState } from 'react';
-
-import { getCharacters } from './services/fetchCharacters';
-
-function App(){
-
-    const [characters, setCharacters] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const characters = await getCharacters(1);
-            setCharacters(characters.results);
-        };
-        fetchData();
-    }, []);
-
-    return (
-        <main>
-            
-        </main>
-    )
-
-}
-
-export default App;
-```
