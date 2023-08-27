@@ -137,12 +137,6 @@ git push -u origin feature/user-info
 # Para actualizar el repositorio local
 git checkout main
 git pull origin main
-
-# Fusionar el branch a main
-git merge feature/user-info
-
-# Subir los cambios fusionados a la rama main en el repositorio remoto
-git push origin main
 ```
 
 5. Eliminar el branch `feature/user-info` del repositorio local y remoto:
