@@ -8,7 +8,7 @@ function App() {
 
     useEffect(()=>{
         const fetchData = async () => {
-            const characters = await getCharacters(6)
+            const characters = await getCharacters(8)
             setCharacters(characters.results)
         }
         fetchData()
