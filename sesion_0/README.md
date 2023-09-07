@@ -124,6 +124,7 @@ Supongamos que tenemos que desarrollar una nueva característica para el proyect
 1. Crear un nuevo branch de tipo `feature` con el nombre `user-info` a partir de `main`.
 
 ```bash
+git pull origin main # siempre que iniciamos un nuevo dia lo recomendable es traer los cambios de la rama main
 git checkout -b feature/user-info
 ```
 
@@ -137,25 +138,21 @@ git push -u origin feature/user-info
 
 3. Crear un Pull Request (PR) desde la interfaz de GitHub para que otro miembro del equipo revise el código y lo apruebe.
 
-4. Una vez que el PR sea aprobado, hacer merge a la rama main desde la interfaz de GitHub o desde la terminal:
+4. Una vez que el PR sea aprobado, hacer click en merge a la rama main y delete branch finalizado en merge desde la interfaz de GitHub.
+
+5. Luego actualizar nuestra rama local con los nuevos cambios
 
 ```bash
-# Para actualizar el repositorio local
+# Cambiar a la rama main y actualizar los datos del repositorio
 git checkout main
 git pull origin main
-
-# Fusionar el branch a main
-git merge feature/user-info
-
-# Subir los cambios fusionados a la rama main en el repositorio remoto
-git push origin main
 ```
 
-5. Eliminar el branch `feature/user-info` del repositorio local y remoto:
+6. Eliminar el branch `feature/user-info` del repositorio local:
 
 ```bash
 git branch -d feature/user-info
-git push origin --delete feature/user-info
+git fetch --prune
 ```
 
 ## Estrategia de versionado
